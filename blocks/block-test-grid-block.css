@@ -1,0 +1,73 @@
+.block-post-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+}
+
+.block-post-grid--post {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.block-post-grid--post-thumbnail {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
+.block-post-grid--post-content {
+  padding: 30px 40px 0 40px;
+  margin: -40px 40px 0 40px;
+  background-color: #fff;
+}
+
+.block-post-grid--post-content h4 {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #2C2936;
+}
+
+.block-post-grid--post-content p {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-left: 20px;
+  color: #67607D;
+}
+
+.block-post-grid--post-content a {
+  position: relative;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5C34E8;
+  margin-left: 20px;
+}
+
+.block-post-grid--post-content a:after {
+  display: block;
+  position: absolute;
+  content: "";
+  border-top: 3px solid #5C34E8;
+  border-right: 3px solid #5C34E8;
+  border-top-right-radius: 3px;
+  width: 8px;
+  height: 8px;
+  transform: rotate( 45deg );
+  top: 4px;
+  right: -20px;
+  transition-duration: 0.1s;
+}
+
+.block-post-grid--post-content a:hover:after {
+  right: -26px;
+}
+
+@media (max-width: 720px) {
+  .block-post-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,8 @@
+# Seaport Museum Theme Changelog
+
+## [1.0.0] - 2019-06-20
+Requires Genesis 2.10.0+.
+Custom Built Template for the South Street Seaport Museum
+
+Forked from Genesis Sample theme
+
