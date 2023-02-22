@@ -131,7 +131,6 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted
 }
 
 b, strong {
@@ -337,7 +336,7 @@ textarea:focus,
 .button,
 .gallery img {
   transition: all 200ms ease-in-out;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
 }
 
 a {
@@ -415,7 +414,7 @@ h6 {
 h1 {
   font-weight: 900;
   font-size: 30px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -441,7 +440,7 @@ h4 {
 .footer-widgets h2 {
   font-size: 30px;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .footer-widgets h6 {
@@ -463,16 +462,9 @@ h6 {
 
 /* Knockout Font
 --------------------------------------------- */
-h1, .slide-content h2, .footer-widgets h2, .fasc-button, button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.site-container div.wpforms-container-full .wpforms-form input[type="submit"],
-.site-container div.wpforms-container-full .wpforms-form button[type="submit"],
-.button, .nav-primary, aside .menu-item,
-#peek-grid .peek-embeddable, #peek-grid .ui-theme-red-velvet, .peek-embeddable html, .peek-embeddable code, .peek-embeddable kbd, .peek-embeddable pre, .peek-embeddable samp, .ui-theme-starless-sky .peek-primary-button, .ui-theme-red-velvet .peek-primary-button, .ui-theme-red-velvet .peek-carousel-image-info .peek-carousel-image-subtitle, .ui-theme-red-velvet .peek-carousel-image-info .peek-carousel-image-title, .ui-theme-red-velvet .peek-carousel-image-cta,
-#peek-grid .ui-theme-red-velvet .peek-primary-button, .peek-book-button, .peek-book-button.peek-book-btn-yellow, .peek-book-button.yellow, .peek-book-button-flat {
-  font-family: "Knockout 94 A", "Knockout 94 B";
+h1, .slide-content h2, .footer-widgets h2, .fasc-button
+{
+  font-family: "Knockout 93 A", "Knockout 93 B";
   letter-spacing: 0.0425em;
 }
 
@@ -622,8 +614,7 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  text-transform: uppercase;
-  border-radius: 3px;
+  text-transform: capitalize;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 16px;
@@ -933,6 +924,10 @@ th:last-child {
 
 .custom-logo-link {
   max-width: 250px;
+}
+
+.custom-logo-link, .custom-logo-home-container, .sub-accordion-section-title_tagline {
+  border: 2px solid #FFFFFF;
 }
 
 .nav-actions .search-container {
@@ -1253,8 +1248,7 @@ hr.wp-block-separator {
 ---------------------------------------------------------------------------- */
 
 .site-header {
-  padding: 0 10px;
-  height: 66px;
+  height: 70px;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -1272,8 +1266,8 @@ hr.wp-block-separator {
 
 .wp-custom-logo .title-area {
   max-width: 350px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .custom-logo-home-container {
@@ -1334,7 +1328,8 @@ hr.wp-block-separator {
 
 img.custom-logo {
   width: auto;
-  height: 55px;
+  height: 38px;
+  vertical-align: text-top;
 }
 
 .logo-hide {
@@ -1389,11 +1384,12 @@ img.custom-logo {
 
 .genesis-nav-menu a {
   display: block;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
   outline-offset: -1px;
   padding-bottom: 8px;
   padding-top: 12px;
+  padding-left: 14px;
   border-bottom: 5px transparent;
   text-decoration: none;
 }
@@ -1401,6 +1397,7 @@ img.custom-logo {
 .genesis-nav-menu .sub-menu,
 .genesis-nav-menu .sub-menu a {
   width: 100%;
+  font-size: 18px;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1409,16 +1406,16 @@ img.custom-logo {
   left: -9999px;
   margin: 0;
   opacity: 1;
-  padding-left: 15px;
   position: static;
   z-index: 99;
 }
 
 .genesis-nav-menu .sub-menu a {
   background-color: #FFFFFF;
-  font-size: 14px;
+  font-size: 18px;
   position: relative;
   word-wrap: break-word;
+  padding-left: 14px;
 }
 
 .genesis-nav-menu .menu-item:focus,
@@ -1493,10 +1490,8 @@ img.custom-logo {
 
 .menu-toggle {
   float: right;
-  line-height: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 15px 0;
+  margin-bottom: 6px;
+  margin-top: 6px;
   position: relative;
   z-index: 1000;
 }
@@ -1505,12 +1500,16 @@ img.custom-logo {
   content: "\f335";
 }
 
+.dashicons-menu::before {
+  content: "\f228";
+}
+
 .site-header .menu-toggle::before {
   float: left;
-  margin-right: 5px;
+  margin-right: 0;
   position: relative;
   text-rendering: auto;
-  top: 1px;
+  font-size: 28px;
 }
 
 
@@ -1546,7 +1545,7 @@ img.custom-logo {
   clear: left;
   padding-bottom: 0;
   width: 100%;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .nav-primary {
@@ -1622,7 +1621,8 @@ img.custom-logo {
 
 #menu-primary > .menu-item, #menu-primary > .menu-item > a {
   /* background-color: transparent; */
-  border: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   width: 100%;
 }
 
@@ -1944,7 +1944,7 @@ p.entry-meta {
 }
 
 #peek-grid .ui-theme-red-velvet .peek-primary-button, .peek-book-button, .peek-book-button.peek-book-btn-yellow, .peek-book-button.yellow, .peek-book-button-flat {
-  text-transform: uppercase !important;
+  text-transform: capitalize !important;
   background-color: transparent !important;
   border: 2px solid #FFFFFF !important;
   color: #FFFFFF !important;
@@ -1977,7 +1977,7 @@ p.entry-meta {
 .slide-content h2 {
   font-size: 30px;
   color: #FFFFFF;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .no-touch-hide {
@@ -2196,7 +2196,7 @@ ul.plain-list > li {
 
   img.custom-logo {
     width: auto;
-    height: 75px;
+    height: 60px;
   }
 
   .big-leader {
@@ -2289,6 +2289,7 @@ ul.plain-list > li {
     padding-left: 0;
     margin-left: -20px;
     box-shadow: rgba(0, 0, 0, 0.1) 3px 4px 9px;
+    color: #333333;
   }
 
   .nav-primary ul.sub-menu li.menu-item a span {
@@ -2353,7 +2354,7 @@ ul.plain-list > li {
   .nav-primary {
     max-width: 1200px;
     margin: 0 auto 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
     height: 125px;
   }
 
@@ -2380,7 +2381,7 @@ ul.plain-list > li {
   }
 
   .nav-scrolled.site-header .wrap {
-    padding-left: 0;
+    padding-left: 10px;
     max-width: 1200px;
     margin: 0 auto;
   }

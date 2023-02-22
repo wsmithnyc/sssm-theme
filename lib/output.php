@@ -167,20 +167,21 @@ function seaport_museum_css() {
 			border-color: %1$s;
 		}
 		
-		.genesis-nav-menu a {
-			#FFF;
+		.genesis-nav-menu .menu-item a {
+			 color: #FFFFFF;
 		}
 		
-		
-		.nav-primary ul.sub-menu,
-		.nav-top .genesis-nav-menu a,
+		.genesis-nav-menu .sub-menu a {
+			color: %1$s;
+			background-color: #FFF;
+		}
+				
 		.nav-top .genesis-nav-menu a:focus,
 		.nav-top .genesis-nav-menu a:hover,
 		.nav-top .genesis-nav-menu .current-menu-item > a
 		.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 		.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-			color: #FFF;
-			background-color: %1$s;
+			color: %1$s;
 		}
 		
 		
@@ -197,10 +198,11 @@ function seaport_museum_css() {
 			background-color: %1$s;
 		}
 		
-		.nav-scrolled .sub-menu  li
+		.nav-scrolled .sub-menu  li,
 		.nav-scrolled .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 		.nav-scrolled .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
 		   background-color: %1$s;
+		   color: #FFF;
 		}
 		
 		.nav-top .genesis-nav-menu>li.current-menu-item {
@@ -239,9 +241,16 @@ function seaport_museum_css() {
 		}
 		
 		@media only screen and (min-width: 960px) {
-			.genesis-nav-menu a {
-				%1$s;
+
+			.nav-top .genesis-nav-menu .menu-item a {
+				color: #333333;
 			}
+			
+			.nav-top .genesis-nav-menu .sub-menu a {
+				color: #333333;
+				background-color: #FFF;
+			}
+		  
 			.sub-menu-toggle::before {
 				color: %1$s;
 			}
@@ -281,14 +290,16 @@ function seaport_museum_css() {
 				border-color: %1$s;
 			}
 			
-			.nav-primary ul.sub-menu,
-			.nav-top .genesis-nav-menu a,
 			.nav-top .genesis-nav-menu a:focus,
 			.nav-top .genesis-nav-menu a:hover,
 			.nav-top .genesis-nav-menu .current-menu-item > a
 			.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 			.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+			    background-color: #FFF;
 				color: %1$s;
+			}
+			
+			.nav-top .nav-primary ul.sub-menu {
 				background-color: #FFF;
 			}
 			
@@ -304,11 +315,11 @@ function seaport_museum_css() {
 				background-color: %1$s;
 				color: #FFF;
 			}
-			.genesis-nav-menu .sub-menu a:hover {
-				background-color: %1$s;
-				color: #FFF;
-			}
 			
+			 .genesis-nav-menu .sub-menu a:hover {
+				color: %1$s;
+			}
+						
 			.site-header.nav-scrolled {
 				background-color: %1$s;
 				color: #FFF;
@@ -320,6 +331,10 @@ function seaport_museum_css() {
 			.nav-scrolled .genesis-nav-menu > .menu-highlight.current-menu-item > a {
 				color: %1$s;
 				background-color: #FFF;
+			}
+			
+			.nav-scrolled .genesis-nav-menu .sub-menu a {
+				color: #FFF;
 			}
 			
 			#menu-primary > .menu-item, #menu-primary > .menu-item > a {
@@ -343,8 +358,7 @@ function seaport_museum_css() {
 			}
 			
 			#menu-primary > .menu-item:hover, #menu-primary > .menu-item:hover > a {
-				background-color: %1$s;
-				color: #FFF;
+				color: %1$s;
 			}
 			
 		}

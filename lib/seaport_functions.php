@@ -123,7 +123,7 @@ function seaport_museum_enqueue_scripts_styles() {
 function seaport_museum_responsive_menu_settings() {
 	
 	$settings = array(
-		'mainMenu'         => __( 'Menu', 'seaport-museum' ),
+		'mainMenu'         => __( '', 'seaport-museum' ),
 		'menuIconClass'    => 'dashicons-before dashicons-menu',
 		'subMenu'          => __( 'Submenu', 'seaport-museum' ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
