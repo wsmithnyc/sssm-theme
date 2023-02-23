@@ -1556,7 +1556,6 @@ img.custom-logo {
   float: right;
   margin-right: 0;
   max-width: calc(100vw - 320px);
-  max-height: 48px;
   overflow: hidden;
 }
 
@@ -1592,6 +1591,7 @@ img.custom-logo {
   margin-left: 20px;
   margin-bottom: 10px;
   float: right;
+  white-space: nowrap;
 }
 
 .nav-actions .action-link:first-child {
@@ -2141,7 +2141,7 @@ ul.plain-list > li {
   .site-header {
     width: 100%;
     z-index: 9999;
-    height: 125px;
+    height: 200px;
     position: relative;
   }
 
@@ -2237,9 +2237,14 @@ ul.plain-list > li {
 
   .nav-actions .action-link {
     display: inline-block;
-    width: 180px;
-    font-size: 16px;
+    height: 60px;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 28px;
     margin-left: 20px;
+    white-space: nowrap;
+    width: auto;
+    text-transform: uppercase;
   }
 
   /* Genesis Menu
@@ -2355,7 +2360,7 @@ ul.plain-list > li {
     max-width: 1200px;
     margin: 0 auto 0;
     text-transform: capitalize;
-    height: 125px;
+    height: 200px;
   }
 
   .nav-home.nav-primary {
@@ -2613,7 +2618,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a {
     display: block;
-    font-size: 13px;
+    font-size: 24px;
   }
 
   /* begin the full-size swap of logo graphics */
@@ -2674,7 +2679,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a {
     display: block;
-    font-size: 14px;
+    font-size: 30px;
   }
 
   .nav-primary .wrap {
@@ -2793,7 +2798,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a {
     display: block;
-    font-size: 16px;
+    font-size: 30px;
   }
 
   .nav-primary .wrap {

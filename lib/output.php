@@ -228,7 +228,7 @@ function seaport_museum_css() {
 			border-color %1$s;
 		}
 		
-		.footer-widgets .widget_text .widget-title, .block-post-grid--sidebar h2 {
+		.footer-widgets .widget_text .widget-title {
 			color: %1$s;
 		}
 		
@@ -238,6 +238,11 @@ function seaport_museum_css() {
 		
 		.sidebar__inner.show-border > ul {
 		   border-color: %1$s;
+		}
+		
+		.block-post-grid--post-content a.event-button:link, .block-post-grid--post-content a.event-button:visited {
+		    color: %1$s;
+		    border-color: %1$s;
 		}
 		
 		@media only screen and (min-width: 960px) {
