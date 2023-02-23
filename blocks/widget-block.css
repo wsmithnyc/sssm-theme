@@ -186,7 +186,7 @@
   background-color: transparent;
   font-size: 40px;
   font-weight: normal;
-  color: #333;
+  color: #000;
 }
 
 .block-post-grid--content-subsection .block-post-grid--post-content h2 {
@@ -195,20 +195,18 @@
 }
 
 .block-post-grid--post-content a:link, .block-post-grid--post-content a:hover, .block-post-grid--post-content a:visited {
-  color: #333;
+  color: #000;
 }
 
 .block-post-grid--post-content a.event-button:link, .block-post-grid--post-content a.event-button:visited {
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 0.0625em;
   line-height: 2em;
   margin: 0;
   padding: 0 15px;
 }
 
 .block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
-  letter-spacing: 0.0625em;
   font-weight: normal;
   font-size: 13px;
   min-width: 100px;
@@ -257,7 +255,6 @@
 
   .block-post-grid--sidebar h2, .block-post-grid--post-content h2 {
     font-size: 35px;
-    letter-spacing: 0.0625em;
     overflow: hidden;
   }
 
@@ -291,7 +288,7 @@
   }
 
   .block-post-grid--sidebar {
-    text-align: right;
+    text-align: left;
   }
 }
 

@@ -161,7 +161,6 @@ function seaport_museum_custom_gutenberg_admin_css() {
   text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
-  letter-spacing: 0.0625em;
 }
 
 .editor-styles-wrapper  .block-post-grid--post-thumbnail {
@@ -188,7 +187,6 @@ function seaport_museum_custom_gutenberg_admin_css() {
   cursor: pointer;
   color: #FFF;
   font-family: "Knockout 94 A", "Knockout 94 B";
-  letter-spacing: 0.0625em;
   height: 2.9em;
   line-height: 2.7em;
   margin: 0;
@@ -198,8 +196,6 @@ function seaport_museum_custom_gutenberg_admin_css() {
 }
 
 .editor-styles-wrapper .block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
-  font-family: "Knockout 94 A", "Knockout 94 B";
-  letter-spacing: 0.0625em;
   font-weight: 600;
   font-size: 13px;
   min-width: 100px;

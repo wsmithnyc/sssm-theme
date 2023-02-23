@@ -248,11 +248,11 @@ function seaport_museum_css() {
 		@media only screen and (min-width: 960px) {
 
 			.nav-top .genesis-nav-menu .menu-item a {
-				color: #333333;
+				color: #000000;
 			}
 			
 			.nav-top .genesis-nav-menu .sub-menu a {
-				color: #333333;
+				color: #000000;
 				background-color: #FFF;
 			}
 		  
