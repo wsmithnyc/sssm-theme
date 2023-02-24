@@ -225,6 +225,20 @@
   overflow: hidden;
 }
 
+/* widget hover: show red bar at top */
+.bock-post-grid--hover-indicator {
+  position: absolute;
+  height: 10px;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1;
+}
+
+.block-post-grid--post:hover .bock-post-grid--hover-indicator {
+  display: block;
+}
+
 @media only screen and (max-width: 767px) {
   .sidebar__inner {
     position: relative !important;
@@ -284,6 +298,11 @@
   .block-post-grid--sidebar {
     text-align: left;
   }
+
+  .block-post-grid--post-content a.event-button:link {
+    max-width: inherit;
+    font-size: 20px;
+  }
 }
 
 
@@ -291,6 +310,11 @@
 @media only screen and (min-width: 1281px) {
   .block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
     font-size: 14px;
+  }
+
+  .block-post-grid--post-content a.event-button:link {
+    max-width: inherit;
+    font-size: 26px;
   }
 
 }

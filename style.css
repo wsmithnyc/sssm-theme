@@ -2177,7 +2177,7 @@ ul.plain-list > li {
   }
 
   .nav-scrolled.nav-actions .nav-actions-wrap {
-    margin: 0;
+    margin: 0 auto;
   }
 
   /* show shopping (c) and donate (b) button */

@@ -111,6 +111,7 @@ class Widget
 		}
 		
 		$html = "<div {$category_data_tags} class=\"block-post-grid--post\" id=\"block-{$post_block_id}\" data-url=\"{$permalink}\">
+            <div class='bock-post-grid--hover-indicator'></div>
 			<div onclick='window.location=\"{$permalink}\"' class=\"block-post-grid--post-thumbnail\" >{$thumbnail_img}</div>
 			<div class=\"block-post-grid--post-content has-theme-white-color\">
                 <h2><a href='{$permalink}'>{$title}</a></h2>

@@ -256,6 +256,10 @@ function seaport_museum_css() {
 		    background-color: %1$s;
 		}
 		
+		.bock-post-grid--hover-indicator {
+		    background-color: %1$s;
+		}
+		
 		@media only screen and (min-width: 960px) {
 
 			.nav-top .genesis-nav-menu .menu-item a {

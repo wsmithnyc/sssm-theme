@@ -237,6 +237,7 @@ class BlockEventGridBlock
         $title = get_the_title( $post );
 
         $html = "<div class=\"block-post-grid--post\" id=\"block-{$post_block_id}\" data-url=\"{$permalink}\">
+            <div class='bock-post-grid--hover-indicator'></div>
 			<div class=\"block-post-grid--post-thumbnail\" style=\"background-image: url('{$thumbnail_url}');\"></div>
             <div class=\"block-post-grid--post-content has-theme-white-color\">
                 <h2>{$title}</h2>
