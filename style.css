@@ -2211,7 +2211,7 @@ ul.plain-list > li {
   }
 
   .big-leader {
-    margin-top: 125px;
+    margin-top: 200px;
   }
 
   .custom-logo-home, .custom-logo-link-home {
@@ -2432,7 +2432,6 @@ ul.plain-list > li {
     padding-left: 30px;
     padding-right: 30px;
     transition: all 200ms ease-in-out;
-    padding-top: 220px;
   }
 
   .home .site-inner {
