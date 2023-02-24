@@ -133,14 +133,16 @@ h6.light {
 	border-width: 0;
 	border-radius: 0;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 30px;
 	font-family: "Libre Franklin", sans-serif;
-	font-weight: 600;
-	padding: 15px 30px;
+	padding: 6px 15px;
 	text-align: center;
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
+	letter-spacing: 0.1em;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
 /* Button Variations */

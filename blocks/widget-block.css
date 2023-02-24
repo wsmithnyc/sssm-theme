@@ -48,12 +48,7 @@
 
 .block-post-grid--content-subsection .block-post-grid--post,
 .block-editor-block-list__block .block-post-grid--post {
-  height: 296px;
-}
-
-.block-post-grid--content-subsection .block-post-grid--post,
-.block-editor-block-list__block .block-post-grid--post {
-  height: 256px;
+  height: auto;
 }
 
 .block-post-grid--post-content {
@@ -198,7 +193,8 @@
   color: #000;
 }
 
-.block-post-grid--post-content a.event-button:link, .block-post-grid--post-content a.event-button:visited {
+.block-post-grid--post-content a.event-button:link,
+.block-post-grid--post-content a.event-button:visited {
   text-decoration: none;
   cursor: pointer;
   line-height: 2em;
@@ -206,20 +202,18 @@
   padding: 0 15px;
 }
 
-.block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
+.block-post-grid--post-content a.event-button:link {
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   min-width: 100px;
   overflow: hidden;
   width: 44%;
-  height: 2em;
   margin: 0;
   padding: 0 15px;
-  border: 2px solid #FFF;
   max-width: 180px;
 }
 
-.block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link:last-child {
+.block-post-grid--post-content a.event-button:link:last-child {
   width: 48%;
 }
 

@@ -94,18 +94,31 @@ function seaport_museum_css() {
 			text-decoration: none;
 		}
 		
-		/* action buttons */
-		.action-link {
-			border-color: #FFF;
-			color: #FFF;
-		}
-		
-		.action-link:hover {
-			color: %1$s;
-			background-color: #FFF;
-		}
-		/* end of action buttons */
-		
+		/* action buttons default for mobile, which has red header */
+		#action-button-a, #action-button-b, #action-button-c {
+            text-transform: uppercase;
+        }
+        
+        #action-button-a, #action-button-b, #action-button-c {
+            border-color: #FFF;
+            color: #FFF;
+        }
+        
+        #action-button-a:hover, #action-button-b:hover, #action-button-c:hover {
+            color: %1$s;
+            background-color: #FFF;
+            border-color: #FFF;
+        }
+        
+        /*
+        #action-button-a:hover {
+            color: #FFF;
+            background-color: %1$s;
+            border-color: #FFF;
+        }*/
+        /* end of action buttons default */
+        
+        		
 		.nav-actions.nav-top button i {
 			color: %1$s;
 		}
@@ -142,16 +155,6 @@ function seaport_museum_css() {
 		.nav-top button.solid {
 		    background-color: %1$s;
 		    color: #fff;
-		}
-		
-		.nav-scrolled.action-link {
-			border-color: #FFF;
-			color: #FFF;
-		}
-		
-		.nav-scrolled.action-link:hover {
-			color: %1$s;
-			background-color: #FFF;
 		}
 		
 		.footer-widget-area h4, .widget-title {
@@ -240,9 +243,17 @@ function seaport_museum_css() {
 		   border-color: %1$s;
 		}
 		
-		.block-post-grid--post-content a.event-button:link, .block-post-grid--post-content a.event-button:visited {
+		.block-post-grid--post-content a.event-button:link, 
+		.block-post-grid--post-content a.event-button:visited  {
 		    color: %1$s;
 		    border-color: %1$s;
+		    background-color: #FFF;
+		}
+		
+		.block-post-grid--post-content a.event-button:hover,
+		.block-post-grid--post-content a.event-button:active {
+		    color: #FFFs;
+		    background-color: %1$s;
 		}
 		
 		@media only screen and (min-width: 960px) {
@@ -272,19 +283,50 @@ function seaport_museum_css() {
 			}
 			/* end of responsive nav button */
 			
-			/* action buttons */
-			.action-link {
+			/* action buttons default */
+			#action-button-b,
+			#action-button-c {
 				border-color: %1$s;
 				color: %1$s;
 			}
 			
-			.action-link:hover {
+			#action-button-a,
+			#action-button-b:hover,
+			#action-button-c:hover {
 				color: #FFF;
 				background-color: %1$s;
+				border-color: %1$s;
 			}
-			/* end of action buttons */
 			
+			#action-button-a:hover {
+			    color: %1$s;
+				background-color: #FFF;
+				border-color: %1$s;
+			}
+			/* end of action buttons default */
 			
+			/* action buttons nav scrolled */
+            .nav-scrolled #action-button-b,
+            .nav-scrolled #action-button-c {
+                border-color: #FFF;
+                color: #FFF;
+            }
+            
+            .nav-scrolled #action-button-a,
+            .nav-scrolled #action-button-b:hover,
+            .nav-scrolled #action-button-c:hover {
+                color: %1$s;
+                background-color: #FFF;
+                border-color: #FFF;
+            }
+            
+            .nav-scrolled #action-button-a:hover {
+                color: #FFF;
+                background-color: %1$s;
+                border-color: #FFF;
+            }
+            /* end of action buttons nav scrolled */
+						
 			#menu-primary > .menu-item, #menu-primary > .menu-item > a {
 				background-color: #FFF;
 				border-color: #FFF;

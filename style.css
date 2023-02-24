@@ -643,11 +643,6 @@ input[type="submit"]:hover,
   color: #FFFFFF;
 }
 
-.site-container .wp-block-button .wp-block-button__link {
-  letter-spacing: 0.1em;
-  font-weight: normal;
-}
-
 .entry-content .button:focus,
 .entry-content .button:hover {
   color: #FFFFFF;
@@ -932,7 +927,7 @@ th:last-child {
 }
 
 .custom-logo-link, .custom-logo-home-container, .sub-accordion-section-title_tagline {
-  border: 2px solid #FFFFFF;
+  /*border: 2px solid #FFFFFF;*/
 }
 
 .nav-actions .search-container {
@@ -1368,7 +1363,7 @@ img.custom-logo {
 }
 
 .actions {
-  display: none;
+  display: inherit;
 }
 
 /* Site Navigation
@@ -1560,17 +1555,19 @@ img.custom-logo {
 .nav-actions .actions {
   float: right;
   margin-right: 0;
-  max-width: calc(100vw - 320px);
+  /*max-width: calc(100vw - 320px);*/
   overflow: hidden;
 }
 
 .nav-actions {
   clear: left;
-  padding: 10px 0 0 0;
+  padding: 12px 0 0 0;
   overflow: hidden;
   z-index: 10000;
-	position: absolute;
+  position: absolute;
   margin-left: 170px;
+  margin-right: 80px;
+  right: 0;
 }
 
 /* responsive nav button */
@@ -1591,8 +1588,8 @@ img.custom-logo {
 
 .nav-actions .action-link {
   display: inline-block;
-  width: 160px;
-  font-size: 13px;
+  padding: 3px 15px;
+  font-size: 18px;
   margin-left: 20px;
   margin-bottom: 10px;
   float: right;
@@ -1634,6 +1631,16 @@ img.custom-logo {
 .custom-logo-home {
   position: relative;
 }
+
+/* Header Action Buttons
+--------------------------------------------- */
+
+/* hide the action buttons b and c for default */
+#action-button-b, #action-button-c {
+  display: none;
+}
+
+
 
 /* Footer Menu
 --------------------------------------------- */
@@ -2045,7 +2052,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 }
 
@@ -2060,7 +2067,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 }
 
@@ -2078,7 +2085,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 
 }
@@ -2087,11 +2094,6 @@ ul.plain-list > li {
   .actions {
     display: inherit;
   }
-
-  #action-donate {
-    display: none;
-  }
-
 }
 
 @media only screen and (min-width: 660px) {
@@ -2099,7 +2101,8 @@ ul.plain-list > li {
     display: inherit;
   }
 
-  #action-donate {
+  /* show shopping button */
+  #action-button-c {
     display: inline-block;
   }
 }
@@ -2177,7 +2180,10 @@ ul.plain-list > li {
     margin: 0;
   }
 
-
+  /* show shopping (c) and donate (b) button */
+  #action-button-c, #action-button-b {
+    display: inline-block;
+  }
 
   .nav-scrolled.nav-actions, .nav-scrolled.site-header {
     position: fixed;
@@ -2237,15 +2243,18 @@ ul.plain-list > li {
 
   .actions {
     display: inherit;
+  }
 
+  .nav-actions {
+    margin-left: 170px;
+    margin-right: inherit;
   }
 
   .nav-actions .action-link {
     display: inline-block;
-    height: 60px;
     padding-left: 2em;
     padding-right: 2em;
-    font-size: 28px;
+    font-size: 18px;
     margin-left: 20px;
     white-space: nowrap;
     width: auto;
@@ -2469,7 +2478,7 @@ ul.plain-list > li {
   }
 
   .sidebar__inner {
-    text-align: right;
+    font-size: 30px;
   }
 
   aside li {
@@ -2684,7 +2693,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .nav-primary .wrap {
@@ -2718,6 +2727,10 @@ ul.plain-list > li {
   .nav-actions .actions {
     float: right;
     margin-top: 10px;
+  }
+
+  .nav-actions .action-link {
+    font-size: 24px;
   }
 
   .slide-content h2 {
@@ -2818,7 +2831,9 @@ ul.plain-list > li {
 }
 
 @media only screen and (min-width: 1600px) {
-
+  .nav-actions .action-link {
+    font-size: 28px;
+  }
 
   .nav-scrolled .title-area {
     margin-left: -190px;
