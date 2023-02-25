@@ -131,7 +131,6 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted
 }
 
 b, strong {
@@ -319,7 +318,7 @@ html {
 
 body {
   background-color: #FFFFFF;
-  color: #333333;
+  color: #000;
   font-family: "Libre Franklin", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -337,7 +336,7 @@ textarea:focus,
 .button,
 .gallery img {
   transition: all 200ms ease-in-out;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
 }
 
 a {
@@ -348,7 +347,7 @@ a {
 
 a:focus,
 a:hover {
-  color: #333333;
+  color: #000;
   text-decoration: none;
   outline: none;
 }
@@ -390,7 +389,7 @@ i {
 
 mark {
   background: #DDDDDD;
-  color: #333333;
+  color: #000;
 }
 
 blockquote {
@@ -415,7 +414,7 @@ h6 {
 h1 {
   font-weight: 900;
   font-size: 30px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -441,7 +440,7 @@ h4 {
 .footer-widgets h2 {
   font-size: 30px;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .footer-widgets h6 {
@@ -463,17 +462,9 @@ h6 {
 
 /* Knockout Font
 --------------------------------------------- */
-h1, .slide-content h2, .footer-widgets h2, .fasc-button, button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.site-container div.wpforms-container-full .wpforms-form input[type="submit"],
-.site-container div.wpforms-container-full .wpforms-form button[type="submit"],
-.button, .nav-primary, aside .menu-item,
-#peek-grid .peek-embeddable, #peek-grid .ui-theme-red-velvet, .peek-embeddable html, .peek-embeddable code, .peek-embeddable kbd, .peek-embeddable pre, .peek-embeddable samp, .ui-theme-starless-sky .peek-primary-button, .ui-theme-red-velvet .peek-primary-button, .ui-theme-red-velvet .peek-carousel-image-info .peek-carousel-image-subtitle, .ui-theme-red-velvet .peek-carousel-image-info .peek-carousel-image-title, .ui-theme-red-velvet .peek-carousel-image-cta,
-#peek-grid .ui-theme-red-velvet .peek-primary-button, .peek-book-button, .peek-book-button.peek-book-btn-yellow, .peek-book-button.yellow, .peek-book-button-flat {
-  font-family: "Knockout 94 A", "Knockout 94 B";
-  letter-spacing: 0.0425em;
+h1, .slide-content h2, .footer-widgets h2, .fasc-button
+{
+  font-family: "Knockout 93 A", "Knockout 93 B";
 }
 
 /* Objects
@@ -581,7 +572,7 @@ select,
 textarea {
   background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
-  color: #333333;
+  color: #000;
   font-size: 18px;
   font-weight: 400;
   padding: 15px;
@@ -601,17 +592,17 @@ input[type="radio"] {
 }
 
 ::-ms-input-placeholder {
-  color: #333333;
+  color: #000;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #333333;
+  color: #000;
   opacity: 1;
 }
 
 ::placeholder {
-  color: #333333;
+  color: #000;
   opacity: 1;
 }
 
@@ -622,17 +613,17 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  text-transform: uppercase;
-  border-radius: 3px;
+  text-transform: capitalize;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: normal;
   padding: 6px 15px;
   text-align: center;
   text-decoration: none;
   white-space: normal;
   width: auto;
+  letter-spacing: 0.1em;
 }
 
 button:focus,
@@ -749,7 +740,7 @@ th:last-child {
   background: #FFFFFF;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: #333333;
+  color: #000;
   display: block;
   font-size: 1em;
   font-weight: 700;
@@ -935,6 +926,10 @@ th:last-child {
   max-width: 250px;
 }
 
+.custom-logo-link, .custom-logo-home-container, .sub-accordion-section-title_tagline {
+  /*border: 2px solid #FFFFFF;*/
+}
+
 .nav-actions .search-container {
   display: none;
 }
@@ -966,7 +961,7 @@ th:last-child {
 
 .entry-title a,
 .sidebar .widget-title a {
-  color: #333333;
+  color: #000;
   text-decoration: none;
 }
 
@@ -1152,7 +1147,7 @@ hr.wp-block-separator {
 .gs-faq__question {
   background: transparent;
   border-bottom: 1px solid #EEEEEE;
-  color: #333333;
+  color: #000;
   padding-left: 0;
   padding-right: 0;
 }
@@ -1244,7 +1239,7 @@ hr.wp-block-separator {
 
 /* Display outline on focus */
 :focus {
-  color: #333333;
+  color: #000;
   outline: #CCCCCC solid 1px;
 }
 
@@ -1253,8 +1248,7 @@ hr.wp-block-separator {
 ---------------------------------------------------------------------------- */
 
 .site-header {
-  padding: 0 10px;
-  height: 66px;
+  height: 70px;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -1272,8 +1266,8 @@ hr.wp-block-separator {
 
 .wp-custom-logo .title-area {
   max-width: 350px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .custom-logo-home-container {
@@ -1334,7 +1328,8 @@ hr.wp-block-separator {
 
 img.custom-logo {
   width: auto;
-  height: 55px;
+  height: 38px;
+  vertical-align: text-top;
 }
 
 .logo-hide {
@@ -1352,7 +1347,7 @@ img.custom-logo {
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-  color: #333333;
+  color: #000;
   text-decoration: none;
 }
 
@@ -1368,7 +1363,7 @@ img.custom-logo {
 }
 
 .actions {
-  display: none;
+  display: inherit;
 }
 
 /* Site Navigation
@@ -1389,11 +1384,12 @@ img.custom-logo {
 
 .genesis-nav-menu a {
   display: block;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
   outline-offset: -1px;
   padding-bottom: 8px;
   padding-top: 12px;
+  padding-left: 14px;
   border-bottom: 5px transparent;
   text-decoration: none;
 }
@@ -1401,6 +1397,7 @@ img.custom-logo {
 .genesis-nav-menu .sub-menu,
 .genesis-nav-menu .sub-menu a {
   width: 100%;
+  font-size: 18px;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1409,16 +1406,16 @@ img.custom-logo {
   left: -9999px;
   margin: 0;
   opacity: 1;
-  padding-left: 15px;
   position: static;
   z-index: 99;
 }
 
 .genesis-nav-menu .sub-menu a {
   background-color: #FFFFFF;
-  font-size: 14px;
+  font-size: 18px;
   position: relative;
   word-wrap: break-word;
+  padding-left: 14px;
 }
 
 .genesis-nav-menu .menu-item:focus,
@@ -1493,10 +1490,8 @@ img.custom-logo {
 
 .menu-toggle {
   float: right;
-  line-height: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 15px 0;
+  margin-bottom: 6px;
+  margin-top: 6px;
   position: relative;
   z-index: 1000;
 }
@@ -1505,12 +1500,16 @@ img.custom-logo {
   content: "\f335";
 }
 
+.dashicons-menu::before {
+  content: "\f228";
+}
+
 .site-header .menu-toggle::before {
   float: left;
-  margin-right: 5px;
+  margin-right: 0;
   position: relative;
   text-rendering: auto;
-  top: 1px;
+  font-size: 28px;
 }
 
 
@@ -1546,7 +1545,7 @@ img.custom-logo {
   clear: left;
   padding-bottom: 0;
   width: 100%;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .nav-primary {
@@ -1556,18 +1555,19 @@ img.custom-logo {
 .nav-actions .actions {
   float: right;
   margin-right: 0;
-  max-width: calc(100vw - 320px);
-  max-height: 48px;
+  /*max-width: calc(100vw - 320px);*/
   overflow: hidden;
 }
 
 .nav-actions {
   clear: left;
-  padding: 10px 0 0 0;
+  padding: 12px 0 0 0;
   overflow: hidden;
   z-index: 10000;
-	position: absolute;
+  position: absolute;
   margin-left: 170px;
+  margin-right: 80px;
+  right: 0;
 }
 
 /* responsive nav button */
@@ -1588,11 +1588,12 @@ img.custom-logo {
 
 .nav-actions .action-link {
   display: inline-block;
-  width: 160px;
-  font-size: 13px;
+  padding: 3px 15px;
+  font-size: 18px;
   margin-left: 20px;
   margin-bottom: 10px;
   float: right;
+  white-space: nowrap;
 }
 
 .nav-actions .action-link:first-child {
@@ -1622,13 +1623,24 @@ img.custom-logo {
 
 #menu-primary > .menu-item, #menu-primary > .menu-item > a {
   /* background-color: transparent; */
-  border: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   width: 100%;
 }
 
 .custom-logo-home {
   position: relative;
 }
+
+/* Header Action Buttons
+--------------------------------------------- */
+
+/* hide the action buttons b and c for default */
+#action-button-b, #action-button-c {
+  display: none;
+}
+
+
 
 /* Footer Menu
 --------------------------------------------- */
@@ -1793,7 +1805,7 @@ p.entry-meta {
 
 .archive-pagination li a {
   background-color: #F5F5F5;
-  color: #333333;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -1806,7 +1818,7 @@ p.entry-meta {
 .archive-pagination li a:focus,
 .archive-pagination li a:hover,
 .archive-pagination li.active a {
-  background-color: #333333;
+  background-color: #000;
   color: #FFFFFF;
 }
 
@@ -1944,7 +1956,7 @@ p.entry-meta {
 }
 
 #peek-grid .ui-theme-red-velvet .peek-primary-button, .peek-book-button, .peek-book-button.peek-book-btn-yellow, .peek-book-button.yellow, .peek-book-button-flat {
-  text-transform: uppercase !important;
+  text-transform: capitalize !important;
   background-color: transparent !important;
   border: 2px solid #FFFFFF !important;
   color: #FFFFFF !important;
@@ -1977,7 +1989,7 @@ p.entry-meta {
 .slide-content h2 {
   font-size: 30px;
   color: #FFFFFF;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .no-touch-hide {
@@ -2040,7 +2052,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 }
 
@@ -2055,7 +2067,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 }
 
@@ -2073,7 +2085,7 @@ ul.plain-list > li {
 
   .block-post-grid--content-subsection .block-post-grid--post,
   .block-editor-block-list__block .block-post-grid--post {
-    height: 256px;
+    height: auto;
   }
 
 }
@@ -2082,11 +2094,6 @@ ul.plain-list > li {
   .actions {
     display: inherit;
   }
-
-  #action-donate {
-    display: none;
-  }
-
 }
 
 @media only screen and (min-width: 660px) {
@@ -2094,7 +2101,8 @@ ul.plain-list > li {
     display: inherit;
   }
 
-  #action-donate {
+  /* show shopping button */
+  #action-button-c {
     display: inline-block;
   }
 }
@@ -2141,7 +2149,7 @@ ul.plain-list > li {
   .site-header {
     width: 100%;
     z-index: 9999;
-    height: 125px;
+    height: 200px;
     position: relative;
   }
 
@@ -2169,10 +2177,13 @@ ul.plain-list > li {
   }
 
   .nav-scrolled.nav-actions .nav-actions-wrap {
-    margin: 0;
+    margin: 0 auto;
   }
 
-
+  /* show shopping (c) and donate (b) button */
+  #action-button-c, #action-button-b {
+    display: inline-block;
+  }
 
   .nav-scrolled.nav-actions, .nav-scrolled.site-header {
     position: fixed;
@@ -2196,11 +2207,11 @@ ul.plain-list > li {
 
   img.custom-logo {
     width: auto;
-    height: 75px;
+    height: 60px;
   }
 
   .big-leader {
-    margin-top: 125px;
+    margin-top: 200px;
   }
 
   .custom-logo-home, .custom-logo-link-home {
@@ -2232,14 +2243,22 @@ ul.plain-list > li {
 
   .actions {
     display: inherit;
+  }
 
+  .nav-actions {
+    margin-left: 170px;
+    margin-right: inherit;
   }
 
   .nav-actions .action-link {
     display: inline-block;
-    width: 180px;
-    font-size: 16px;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 18px;
     margin-left: 20px;
+    white-space: nowrap;
+    width: auto;
+    text-transform: uppercase;
   }
 
   /* Genesis Menu
@@ -2258,7 +2277,7 @@ ul.plain-list > li {
   }
 
   .genesis-nav-menu > .menu-highlight > a {
-    background-color: #333333;
+    background-color: #000;
     border-radius: 3px;
     color: #FFFFFF;
     font-weight: 600;
@@ -2289,6 +2308,7 @@ ul.plain-list > li {
     padding-left: 0;
     margin-left: -20px;
     box-shadow: rgba(0, 0, 0, 0.1) 3px 4px 9px;
+    color: #000;
   }
 
   .nav-primary ul.sub-menu li.menu-item a span {
@@ -2353,8 +2373,8 @@ ul.plain-list > li {
   .nav-primary {
     max-width: 1200px;
     margin: 0 auto 0;
-    text-transform: uppercase;
-    height: 125px;
+    text-transform: capitalize;
+    height: 200px;
   }
 
   .nav-home.nav-primary {
@@ -2380,7 +2400,7 @@ ul.plain-list > li {
   }
 
   .nav-scrolled.site-header .wrap {
-    padding-left: 0;
+    padding-left: 10px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -2458,7 +2478,7 @@ ul.plain-list > li {
   }
 
   .sidebar__inner {
-    text-align: right;
+    font-size: 30px;
   }
 
   aside li {
@@ -2610,9 +2630,9 @@ ul.plain-list > li {
     /* transform: scale(1); */
   }
 
-  .genesis-nav-menu a {
+  .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 13px;
+    font-size: 24px;
   }
 
   /* begin the full-size swap of logo graphics */
@@ -2671,9 +2691,9 @@ ul.plain-list > li {
     /*margin-top: 85px;*/
   }
 
-  .genesis-nav-menu a {
+  .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 14px;
+    font-size: 28px;
   }
 
   .nav-primary .wrap {
@@ -2707,6 +2727,10 @@ ul.plain-list > li {
   .nav-actions .actions {
     float: right;
     margin-top: 10px;
+  }
+
+  .nav-actions .action-link {
+    font-size: 24px;
   }
 
   .slide-content h2 {
@@ -2790,9 +2814,9 @@ ul.plain-list > li {
     transition: transform 100ms ease-in-out;
   }
 
-  .genesis-nav-menu a {
+  .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 16px;
+    font-size: 30px;
   }
 
   .nav-primary .wrap {
@@ -2807,7 +2831,9 @@ ul.plain-list > li {
 }
 
 @media only screen and (min-width: 1600px) {
-
+  .nav-actions .action-link {
+    font-size: 28px;
+  }
 
   .nav-scrolled .title-area {
     margin-left: -190px;
@@ -2862,7 +2888,7 @@ ul.plain-list > li {
   *::after {
     background: transparent !important;
     box-shadow: none !important;
-    color: #333333 !important;
+    color: #000 !important;
     text-shadow: none !important;
   }
 

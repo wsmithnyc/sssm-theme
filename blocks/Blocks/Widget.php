@@ -111,20 +111,19 @@ class Widget
 		}
 		
 		$html = "<div {$category_data_tags} class=\"block-post-grid--post\" id=\"block-{$post_block_id}\" data-url=\"{$permalink}\">
+            <div class='bock-post-grid--hover-indicator'></div>
 			<div onclick='window.location=\"{$permalink}\"' class=\"block-post-grid--post-thumbnail\" >{$thumbnail_img}</div>
-			<div class=\"block-post-grid--post-content {$block_head_class} has-theme-white-color\">
-				<h2><a href='{$permalink}'>{$title}</a></h2>
-				<!--<p class=\"subtitle\">Subtitle</p>-->
-				<div id=\"extra-{$post_block_id}\" class=\"block-post-grid--post-content-extra  {$block_head_class} has-theme-white-color\">
-					{$excerptHtml}
-				</div>
-				<div class='{$block_head_class} block-post-grid--post-actions no-touch-hide'>{$ticket_button} {$page_button}</div>
-			</div>
-			
+			<div class=\"block-post-grid--post-content has-theme-white-color\">
+                <h2><a href='{$permalink}'>{$title}</a></h2>
+                <div id=\"extra-{$post_block_id}\" class=\"block-post-grid--post-content-extra  has-theme-white-color\">
+                    {$excerptHtml}
+                    <div class='block-post-grid--post-actions'>{$ticket_button} {$page_button}</div>
+                </div>
+            </div>
 		</div>
 		";
 		
-		return $html;
+		return  $html;
 		
 	}
 	
@@ -142,7 +141,7 @@ class Widget
 	{
 		if (empty(trim($ticket_url))) return '';
 		
-		return "<a class='event-button wp-block-button__link {$block_head_class}' href='{$ticket_url}'>BOOK NOW</a>";
+		return "<a class='event-button button ' href='{$ticket_url}'>BOOK NOW</a>";
 	}
 	
 	/**
@@ -159,7 +158,7 @@ class Widget
 	{
 		if (empty(trim($permalink))) return '';
 		
-		return "<a class='event-button wp-block-button__link {$block_head_class}' href='$permalink}'>LEARN MORE</a>";
+		return "<a class='event-button button' href='$permalink}'>LEARN MORE</a>";
 	}
 
 }

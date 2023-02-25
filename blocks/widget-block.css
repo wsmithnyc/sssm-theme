@@ -12,15 +12,12 @@
 .block-post-grid--post {
   padding-bottom: 20px;
   margin-bottom: 30px;
-  height: 390px;
+  max-height: 700px;
   position: relative;
 }
 
 .block-post-grid--post-thumbnail {
-  position: absolute;
-  height: 286px;
-  bottom: 0;
-  left: 0;
+  height: 290px;
   width: 100%;
   cursor: pointer;
   overflow: hidden;
@@ -51,27 +48,20 @@
 
 .block-post-grid--content-subsection .block-post-grid--post,
 .block-editor-block-list__block .block-post-grid--post {
-  height: 296px;
-}
-
-.block-post-grid--content-subsection .block-post-grid--post,
-.block-editor-block-list__block .block-post-grid--post {
-  height: 256px;
+  height: auto;
 }
 
 .block-post-grid--post-content {
-  padding: 20px;
+  padding: 20px 0;
   overflow: hidden;
   min-height: 108px;
   border-bottom: #FFF 4px solid;
-  position: absolute;
   width: 100%;
 }
 
 .block-post-grid--post-content h2 {
   word-wrap: break-word;
   overflow: hidden;
-  height: 1.8em;
 }
 
 .block-post-grid--post-content a.event-button {
@@ -88,7 +78,7 @@
 
 
 .block-post-grid--post-content .subtitle {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: bold;
 }
 
@@ -185,17 +175,13 @@
   line-height: 1;
 }
 
-.block-post-grid--sidebar h2, .block-post-grid--post-content h2 {
-  font-family: "Knockout 94 A", "Knockout 94 B";
-  text-transform: uppercase;
+.block-post-grid--sidebar h2 a, .block-post-grid--post-content h2 a {
+  text-transform: capitalize;
   text-decoration: none;
   background-color: transparent;
-  letter-spacing: 0.0625em;
-}
-
-.block-post-grid--sidebar h2, .block-post-grid--post-content h2 {
-  font-size: 28px;
-  line-height: 0.9;
+  font-size: 40px;
+  font-weight: normal;
+  color: #000;
 }
 
 .block-post-grid--content-subsection .block-post-grid--post-content h2 {
@@ -204,53 +190,53 @@
 }
 
 .block-post-grid--post-content a:link, .block-post-grid--post-content a:hover, .block-post-grid--post-content a:visited {
-  color: #FFF;
-
+  color: #000;
 }
 
-.block-post-grid--post-content a.event-button:link, .block-post-grid--post-content a.event-button:visited {
+.block-post-grid--post-content a.event-button:link,
+.block-post-grid--post-content a.event-button:visited {
   text-decoration: none;
   cursor: pointer;
-  color: #FFF;
-  font-family: "Knockout 94 A", "Knockout 94 B";
-  letter-spacing: 0.0625em;
-  height: 2.9em;
-  line-height: 2.7em;
+  line-height: 2em;
   margin: 0;
   padding: 0 15px;
-  border: 2px solid #FFF;
-  border-radius: 3px;
 }
 
-.block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
-  font-family: "Knockout 94 A", "Knockout 94 B";
-  letter-spacing: 0.0625em;
-  font-weight: 600;
-  font-size: 13px;
+.block-post-grid--post-content a.event-button:link {
+  font-weight: normal;
+  font-size: 14px;
   min-width: 100px;
   overflow: hidden;
   width: 44%;
-  height: 2.9em;
-  line-height: 2.7em;
   margin: 0;
   padding: 0 15px;
-  border: 2px solid #FFF;
-  border-radius: 3px;
   max-width: 180px;
 }
 
-.block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link:last-child {
+.block-post-grid--post-content a.event-button:link:last-child {
   width: 48%;
 }
 
 .block-post-grid--post-content a.event-button:hover, .block-post-grid--post-content a.event-button:active {
-  border-color: #FFF;
-  background-color: #FFF;
-  color: inherit;
+  color: #FFF;
 }
 
 .archive-wrapper {
   overflow: hidden;
+}
+
+/* widget hover: show red bar at top */
+.bock-post-grid--hover-indicator {
+  position: absolute;
+  height: 10px;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1;
+}
+
+.block-post-grid--post:hover .bock-post-grid--hover-indicator {
+  display: block;
 }
 
 @media only screen and (max-width: 767px) {
@@ -277,8 +263,6 @@
 
   .block-post-grid--sidebar h2, .block-post-grid--post-content h2 {
     font-size: 35px;
-    line-height: 0.9;
-    letter-spacing: 0.0625em;
     overflow: hidden;
   }
 
@@ -295,11 +279,12 @@
   }
 
   .block-post-grid--post-content a.event-button {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .block-post-grid--post-content {
     min-height: 108px;
+    overflow: hidden;
   }
 
   .block-post-grid--content-subsection .block-post-grid--post-content {
@@ -311,7 +296,12 @@
   }
 
   .block-post-grid--sidebar {
-    text-align: right;
+    text-align: left;
+  }
+
+  .block-post-grid--post-content a.event-button:link {
+    max-width: inherit;
+    font-size: 20px;
   }
 }
 
@@ -320,6 +310,11 @@
 @media only screen and (min-width: 1281px) {
   .block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
     font-size: 14px;
+  }
+
+  .block-post-grid--post-content a.event-button:link {
+    max-width: inherit;
+    font-size: 26px;
   }
 
 }
