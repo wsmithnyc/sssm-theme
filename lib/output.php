@@ -184,7 +184,8 @@ function seaport_museum_css() {
 		.nav-top .genesis-nav-menu .current-menu-item > a
 		.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 		.nav-top .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-			color: %1$s;
+			background-color: %1$s;
+			color: #FFF;
 		}
 		
 		

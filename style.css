@@ -79,16 +79,6 @@ Text Domain: seaport-museum
 */
 
 
-/*
-@font-face {
-	font-family: "Knockout 94 A";
-	src: url("/wp-content/themes/seaport-museum/fonts/Knockout-90UltmtWelterwt.eot") format('embedded-opentype'),
-	url("/wp-content/themes/seaport-museum/fonts/Knockout-90UltmtWelterwt.svg") format('svg'),
-	url("/wp-content/themes/seaport-museum/fonts/Knockout-90UltmtWelterwt.woff") format('woff');
-}
-
- */
-
 /* HTML5 Reset
 ---------------------------------------------------------------------------- */
 
@@ -412,7 +402,7 @@ h6 {
 }
 
 h1 {
-  font-weight: 900;
+  font-weight: normal;
   font-size: 30px;
   text-transform: capitalize;
 }
@@ -462,9 +452,10 @@ h6 {
 
 /* Knockout Font
 --------------------------------------------- */
-h1, .slide-content h2, .footer-widgets h2, .fasc-button
+h1, .slide-content h2, .footer-widgets h2
 {
   font-family: "Knockout 93 A", "Knockout 93 B";
+  font-weight: normal;
 }
 
 /* Objects
@@ -607,13 +598,14 @@ input[type="radio"] {
 }
 
 button,
+.search-form-submit,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 16px;
@@ -743,7 +735,7 @@ th:last-child {
   color: #000;
   display: block;
   font-size: 1em;
-  font-weight: 700;
+  font-weight: normal;
   height: auto;
   padding: 15px 23px 14px;
   text-decoration: none;
@@ -881,7 +873,8 @@ th:last-child {
 
 #search-submit {
   border: none;
-  padding: 4px;
+  padding: 8px 0;
+  outline: none;
 }
 
 .nav-actions button i {
@@ -1329,7 +1322,6 @@ hr.wp-block-separator {
 img.custom-logo {
   width: auto;
   height: 38px;
-  vertical-align: text-top;
 }
 
 .logo-hide {
@@ -1509,7 +1501,7 @@ img.custom-logo {
   margin-right: 0;
   position: relative;
   text-rendering: auto;
-  font-size: 28px;
+  font-size: 40px;
 }
 
 
@@ -1575,7 +1567,7 @@ img.custom-logo {
   background-color: transparent;
   color: #FFFFFF;
   border: none;
-  padding: 11px 15px 16px;
+  padding: 4px 30px 20px 0;
 }
 
 /* end of responsive nav button */
@@ -1589,7 +1581,7 @@ img.custom-logo {
 .nav-actions .action-link {
   display: inline-block;
   padding: 3px 15px;
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 20px;
   margin-bottom: 10px;
   float: right;
@@ -2585,6 +2577,11 @@ ul.plain-list > li {
     margin-bottom: 60px;
   }
 
+  .archive-description {
+    margin-top: 200px;
+    margin-bottom: 20px;
+  }
+
   /* Footer Widgets
   --------------------------------------------- */
   .footer-widgets, .social-footer-content {
@@ -2632,7 +2629,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   /* begin the full-size swap of logo graphics */
@@ -2683,6 +2680,12 @@ ul.plain-list > li {
     font-size: 60px;
     line-height: 1;
   }
+
+  /* spacer for pages without header images, to prevent header from covering page content */
+  .header-spacer {
+    margin-top: 200px;
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 1220px) {
@@ -2693,7 +2696,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .nav-primary .wrap {
@@ -2730,7 +2733,7 @@ ul.plain-list > li {
   }
 
   .nav-actions .action-link {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .slide-content h2 {
@@ -2816,7 +2819,7 @@ ul.plain-list > li {
 
   .genesis-nav-menu a, .genesis-nav-menu .sub-menu a {
     display: block;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .nav-primary .wrap {
@@ -2832,7 +2835,7 @@ ul.plain-list > li {
 
 @media only screen and (min-width: 1600px) {
   .nav-actions .action-link {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .nav-scrolled .title-area {

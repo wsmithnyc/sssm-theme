@@ -129,11 +129,11 @@ h6.light {
 	font-weight: 600;
 }
 
-.site-container .wp-block-button .wp-block-button__link {
+.site-container .wp-block-button .wp-block-button__link, .search-form-submit {
 	border-width: 0;
 	border-radius: 0;
 	cursor: pointer;
-	font-size: 30px;
+	font-size: 20px;
 	font-family: "Libre Franklin", sans-serif;
 	padding: 6px 15px;
 	text-align: center;
@@ -154,7 +154,7 @@ h6.light {
 	background-color: transparent;
 	border: 2px solid currentColor;
 	border-radius: 3px;
-	padding: 13px 28px;
+	padding: 13px 20px;
 }
 
 .site-container .wp-block-button .wp-block-button__link:focus,

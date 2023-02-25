@@ -61,7 +61,7 @@ function seaport_museum_enqueue_scripts_styles() {
 	// load Libre Franklin Font
 	wp_enqueue_style(
 		'seaport-museum-fonts-libre-franklin',
-		'//fonts.googleapis.com/css?family=Libre+Franklin:400,600,700,900',
+		'//fonts.googleapis.com/css?family=Libre+Franklin:400,600,700',
 		[],
 		CHILD_THEME_VERSION
 	);

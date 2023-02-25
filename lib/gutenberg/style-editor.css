@@ -382,7 +382,7 @@ hr.wp-block-separator.is-style-dots {
 	/background-color: transparent;
 	border: 2px solid currentColor;
 	border-radius: 0;
-	padding: 13px 28px;
+	padding: 13px 20px;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:focus,

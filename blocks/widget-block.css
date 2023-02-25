@@ -279,7 +279,7 @@
   }
 
   .block-post-grid--post-content a.event-button {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .block-post-grid--post-content {
@@ -314,7 +314,7 @@
 
   .block-post-grid--post-content a.event-button:link {
     max-width: inherit;
-    font-size: 26px;
+    font-size: 20px;
   }
 
 }
