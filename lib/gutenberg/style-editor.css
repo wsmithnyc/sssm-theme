@@ -91,8 +91,10 @@ h6 {
 }
 
 h1 {
-	font-size: 30px;
-	font-family: "Knockout 94 A", "Knockout 94 B";
+	font-family: "Knockout 93 A", "Knockout 93 B", sans-serif;
+	color: #ba0c2f;
+	font-size: 60px;
+	line-height: 1;
 }
 
 h2 {

@@ -157,10 +157,11 @@ function seaport_museum_custom_gutenberg_admin_css() {
 }
 
 .editor-styles-wrapper .block-post-grid--sidebar h2, .editor-styles-wrapper .block-post-grid--post-content h2 {
-  font-family: "Knockout 94 A", "Knockout 94 B" !important;
+  font-family: "Knockout 93 A", "Knockout 93 B" !important;
   text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
+  color: {$block_editor_settings['default-link-color']};
 }
 
 .editor-styles-wrapper  .block-post-grid--post-thumbnail {
@@ -186,7 +187,7 @@ function seaport_museum_custom_gutenberg_admin_css() {
   text-decoration: none;
   cursor: pointer;
   color: #FFF;
-  font-family: "Knockout 94 A", "Knockout 94 B";
+  font-family: "Knockout 93 A", "Knockout 93 B";
   height: 2.9em;
   line-height: 2.7em;
   margin: 0;

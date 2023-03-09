@@ -4,10 +4,10 @@ namespace Blocks;
 
 use \DateTime;
 use \DateInterval;
+use Exception;
 
 class WidgetGridBlock
 {
-	const SSSM_PAGE = 'sssm-page';
 	const SELECTION_POSTS = 'posts';
 	
 	// Variables
@@ -28,7 +28,7 @@ class WidgetGridBlock
 	protected $show_days;
 	protected $post_selection;
 	protected $grid_block_class;
-	protected $accent_classes;
+	protected $accent_class;
 	
 	protected $post_list;
 	
@@ -43,8 +43,8 @@ class WidgetGridBlock
 	 *
 	 * @return string
 	 */
-	public function getOutput()
-	{
+	public function getOutput(): string
+    {
 		//get the post data
 		if ($this->post_selection === self::SELECTION_POSTS)
 		{
@@ -83,7 +83,7 @@ class WidgetGridBlock
 		
 		$this->post_selection = self::SELECTION_POSTS;
 		
-		$this->post_type  = self::SSSM_PAGE;
+		$this->post_type = Constants::SSSM_POST_TYPE;
 		
 		//$this->post_count = (int)block_value( 'number-of-events' );
 		//$this->categories = block_value('categories');
@@ -109,12 +109,7 @@ class WidgetGridBlock
 		$this->grid_block_class = block_field( 'className');
 		
 		//accent colors
-		$this->accent_classes = [
-			'has-theme-primary-background-color',
-			//'has-theme-accent-2-background-color',
-			//'has-theme-accent-3-background-color',
-			//'has-theme-accent-4-background-color',
-		];
+		$this->accent_class = 'has-theme-primary-background-color';
 		
 		//date range
 		//$this->start_day_value = block_value('relative-start-day');
@@ -128,19 +123,16 @@ class WidgetGridBlock
 	}
 	
 	/**
-	 * @deprecated
-	 *
-	 * Ovation Tix no longer in use, saving for example
+	 * Use for Event Dates
+     * We store the event dates as custom fields on the posts
+     * A separate plugin or process will populate those dates
 	 *
 	 * Calculate the start and end dates, based on the relative days configuration
 	 *
 	 * @throws Exception
 	 */
-	protected function calculateDates()
-	{
-		//right now, we arne't handling dates, but preserving this logic as a starting point if we do
-		return false;
-		
+	protected function calculateDates(): void
+    {
 		//automatically use lowest and higher value
 		$start_day = min($this->start_day_value, $this->end_day_value) - 1;
 		$end_day = max($this->start_day_value, $this->end_day_value) - 1;
@@ -161,10 +153,6 @@ class WidgetGridBlock
 			
 			$this->activeDates[$formattedDate] = true;
 		}
-		
-		
-		return true;
-		
 	}
 	
 	/**
@@ -274,7 +262,7 @@ class WidgetGridBlock
 		foreach($this->post_list as $post)
 		{
 			
-			$html .= Widget::getWidgetHtml($post, $this->accent_classes[0]);
+			$html .= Widget::getWidgetHtml($post, $this->accent_class);
 			
 			$block_count++;
 			
@@ -300,7 +288,7 @@ class WidgetGridBlock
 	 *
 	 * @return string
 	 */
-	protected function getOvationDatesWidgetGrid($filterDates = false)
+	protected function getEventDatesWidgetGrid($filterDates = false)
 	{
 		$html = "<div class='block-post-grid {$this->grid_block_class}'>";
 		
@@ -314,9 +302,9 @@ class WidgetGridBlock
 			$post->dates = $this->getEventDates($ovation_links);
 			
 			//get the master calendar from custom field
-			$ovation_calendar = get_post_custom_values('ovation_calendar_link', $post->ID);
+			$event_calendar = get_post_custom_values(Constants::CUSTOM_FIELD_EVENT_DATES, $post->ID);
 			
-			$post->ovation_calendar_link = $ovation_calendar[0] ?? '';
+			$post->ovation_calendar_link = $event_calendar[0] ?? '';
 			
 			//determine whether to skip this post based on grid criteria dates
 			if ($filterDates)
@@ -324,7 +312,7 @@ class WidgetGridBlock
 				if (empty(array_intersect_key($this->activeDates, $post->dates))) continue;
 			}
 			
-			$html .= Widget::getWidgetHtml($post, $this->accent_classes[0]);
+			$html .= Widget::getWidgetHtml($post, $this->accent_class);
 			
 			$block_count++;
 			
@@ -360,10 +348,6 @@ class WidgetGridBlock
 	}
 	
 	/**
-	 * @deprecated
-	 *
-	 * Ovation Tix no longer in use, saving for example
-	 *
 	 * parses the OvationTix deep link text to get the date and link in an array
 	 *
 	 * @param $ovation_link
@@ -371,7 +355,7 @@ class WidgetGridBlock
 	 * @return array
 	 * @throws Exception
 	 */
-	protected function parseOvationLink($ovation_link, $include_time = false)
+	protected function parseOvationLink($ovation_link, $include_time = false): array
     {
     	//sample: Oct 04, 2019 @ 03:00PM	https://web.ovationtix.com/trs/pe/10449623
 	    
@@ -395,23 +379,23 @@ class WidgetGridBlock
     }
 	
 	/**
-	 * @deprecated
+	 * @param array $event_links
+	 *
+	 * @return array
+	 * @throws Exception
+	 *@deprecated
 	 *
 	 * returns an array of dates derived from parse ovationTix deep links
 	 * pattern: [ 'date' => 'link' ]
 	 *
-	 * @param array $ovation_links
-	 *
-	 * @return array
-	 * @throws Exception
 	 */
-	protected function getEventDates($ovation_links = null)
+	protected function getEventDates(?array $event_links = null)
 	{
-		if (empty($ovation_links[0])) return [];
+		if (empty($event_links[0])) return [];
 		
 		$dates = [];
 		
-		$ovation_links_data = explode("\n", $ovation_links[0]);
+		$ovation_links_data = explode("\n", $event_links[0]);
 		
 		foreach ($ovation_links_data as $ovation_link)
 		{
