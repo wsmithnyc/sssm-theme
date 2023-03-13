@@ -2145,6 +2145,27 @@ ul.plain-list > li {
     position: relative;
   }
 
+  .top-banner {
+    background-color: #000;
+    color: #FFF;
+    font-size: 18px;
+  }
+
+  .top-banner-content {
+    max-width: 980px;
+    width: auto;
+    margin: 0 auto;
+    padding: 6px;
+  }
+
+  .top-banner .widget_block {
+    margin-bottom: 0;
+  }
+
+  .top-banner .dashicons {
+    line-height: 1.4;
+  }
+
   .nav-actions .search-container {
     display: inline-block;
   }

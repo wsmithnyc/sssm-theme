@@ -86,6 +86,9 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 // Adds the ShortCode for event description, which is used in SSSM Posts
 add_shortcode( 'event-desc', 'get_event_desc_shortcode' );
 
+// Adds the ShortCode for Museum Hours
+add_shortcode( 'museum-hours', 'get_museum_hours_shortcode' );
+
 // Adds support for 3-column footer widgets.
 add_theme_support( 'genesis-footer-widgets', 4 );
 
@@ -109,6 +112,9 @@ add_action( 'genesis_theme_settings_metaboxes', 'seaport_museum_remove_metaboxes
 
 add_filter( 'genesis_customizer_theme_settings_config', 'seaport_museum_remove_customizer_settings' );
 
+//show banner before header
+add_action( 'genesis_before_header', 'add_widget_before_header', 5 );
+
 // Displays top action buttons
 add_action( 'genesis_header', 'seaport_museum_top_actions', 11 ); //'genesis_header'
 
@@ -128,7 +134,6 @@ add_filter( 'wp_nav_menu_args', 'seaport_museum_secondary_menu_args' );
 add_filter( 'genesis_author_box_gravatar_size', 'seaport_museum_author_box_gravatar' );
 
 add_filter( 'genesis_comment_list_args', 'seaport_museum_comments_gravatar' );
-
 
 
 //remove_action( 'genesis_footer', 'genesis_do_footer' );

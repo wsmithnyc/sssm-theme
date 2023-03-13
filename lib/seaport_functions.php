@@ -211,6 +211,14 @@ function seaport_museum_comments_gravatar( $args ) {
 	return $args;
 }
 
+genesis_register_sidebar(
+    [
+        'id' => 'before-header',
+        'name' => __('Top Banner', '$text_domain'),
+        'description' => __('Top Banner is displayed above the header area.', '$text_domain'),
+    ]
+);
+
 /**
  * outputs the string returned from seaport_museum_get_custom_logo()
  */
@@ -792,6 +800,25 @@ function get_event_desc_shortcode(): string
         return '';
     }
 
-    return "<div data-template-id-desc='{$id}-desc'>$desc</div>";
+    return "<div data-shortcode='event-desc' data-template-id='{$id}-desc'>$desc</div>";
 }
 
+function get_museum_hours_shortcode(): string
+{
+    $open = '11am';
+    $close = '5pm';
+
+    $desc = "<span class='dashicons dashicons-clock'></span>The Museum is open today from $open - $close";
+
+    return "<div data-shortcode='museum-hours'>$desc</div>";
+}
+
+function add_widget_before_header()
+{
+    if (is_active_sidebar('before-header')) {
+        genesis_widget_area('before-header', [
+            'before' => '<div class="before-header top-banner widget-area"><div class="top-banner-content">',
+            'after' => '</div></div>',
+        ]);
+    }
+}
