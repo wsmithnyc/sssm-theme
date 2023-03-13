@@ -1,15 +1,14 @@
 <?php
 
-require_once (__DIR__ . '\..\blocks\blocks_autoload.php');
+require_once (realpath(dirname(__FILE__) . '/..') . '/blocks/blocks_autoload.php');
 
 //custom functions for theme.
 //these are the functions that are called from functions.php
 //separation of concerns: execution vs function definition
-//wordpress calls functions.php to execute code
+//WordPress calls functions.php to execute code
 //this file contains the functions only
 //so that "functions.php" only execute code and has no function definitions.
 use Blocks\Constants;
-use function StudioPress\Genesis\Functions\Schema\search_form_input;
 
 /**
  * Adds Gutenberg opt-in features and styling.

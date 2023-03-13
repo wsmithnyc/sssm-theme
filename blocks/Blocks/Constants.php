@@ -12,4 +12,5 @@ class Constants
     const CUSTOM_FIELD_EVENT_SHORT_DESC = 'event-short-desc';
     const CUSTOM_FIELD_EVENT_DESC = 'event-desc';
     const CUSTOM_FIELD_EVENT_DATES = 'event-date-list';
+    const WP_TAG_THIS_WEEK = 'This Week';
 }
