@@ -78,7 +78,6 @@
 
 
 .block-post-grid--post-content .subtitle {
-  text-transform: capitalize;
   font-weight: bold;
 }
 
@@ -176,7 +175,6 @@
 }
 
 .block-post-grid--sidebar h2 a, .block-post-grid--post-content h2 a {
-  text-transform: capitalize;
   text-decoration: none;
   background-color: transparent;
   font-size: 40px;

@@ -404,7 +404,7 @@ h6 {
 h1 {
   font-weight: normal;
   font-size: 30px;
-  text-transform: capitalize;
+  
 }
 
 h2 {
@@ -430,7 +430,7 @@ h4 {
 .footer-widgets h2 {
   font-size: 30px;
   margin: 0;
-  text-transform: capitalize;
+  
 }
 
 .footer-widgets h6 {
@@ -1537,7 +1537,7 @@ img.custom-logo {
   clear: left;
   padding-bottom: 0;
   width: 100%;
-  text-transform: capitalize;
+  
 }
 
 .nav-primary {
@@ -1948,7 +1948,6 @@ p.entry-meta {
 }
 
 #peek-grid .ui-theme-red-velvet .peek-primary-button, .peek-book-button, .peek-book-button.peek-book-btn-yellow, .peek-book-button.yellow, .peek-book-button-flat {
-  text-transform: capitalize !important;
   background-color: transparent !important;
   border: 2px solid #FFFFFF !important;
   color: #FFFFFF !important;
@@ -1981,7 +1980,7 @@ p.entry-meta {
 .slide-content h2 {
   font-size: 30px;
   color: #FFFFFF;
-  text-transform: capitalize;
+  
 }
 
 .no-touch-hide {
@@ -2386,7 +2385,7 @@ ul.plain-list > li {
   .nav-primary {
     max-width: 1200px;
     margin: 0 auto 0;
-    text-transform: capitalize;
+    
     height: 200px;
   }
 
