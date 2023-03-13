@@ -152,13 +152,11 @@ function seaport_museum_custom_gutenberg_admin_css() {
 
 .editor-styles-wrapper .block-post-grid--content-subsection .block-post-grid--post,
 .editor-styles-wrapper .block-editor-block-list__block .block-post-grid--post {
-  height: 256px;
+  max-height: 400px;
   overflow: hidden;
 }
 
 .editor-styles-wrapper .block-post-grid--sidebar h2, .editor-styles-wrapper .block-post-grid--post-content h2 {
-  font-family: "Knockout 93 A", "Knockout 93 B" !important;
-  text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
   color: {$block_editor_settings['default-link-color']};
@@ -183,17 +181,19 @@ function seaport_museum_custom_gutenberg_admin_css() {
   margin: 0;
 }
 
+.bock-post-grid--hover-indicator {
+    background-color: {$block_editor_settings['default-button-color']};
+}
+
 .editor-styles-wrapper .block-post-grid--post-content a.event-button:link, .editor-styles-wrapper .block-post-grid--post-content a.event-button:visited {
   text-decoration: none;
   cursor: pointer;
-  color: #FFF;
-  font-family: "Knockout 93 A", "Knockout 93 B";
   height: 2.9em;
   line-height: 2.7em;
   margin: 0;
   padding: 0 15px;
-  border: 2px solid #FFF;
-  border-radius: 3px;
+  border: 2px solid {$block_editor_settings['default-button-color']};
+  color: {$block_editor_settings['default-button-color']};
 }
 
 .editor-styles-wrapper .block-post-grid--content-subsection .block-post-grid--post-content a.event-button:link {
@@ -206,7 +206,6 @@ function seaport_museum_custom_gutenberg_admin_css() {
   line-height: 2.7em;
   margin: 0;
   padding: 0 15px;
-  border: 2px solid #FFF;
   border-radius: 3px;
   max-width: 180px;
 }
