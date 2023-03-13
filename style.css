@@ -2141,7 +2141,7 @@ ul.plain-list > li {
   .site-header {
     width: 100%;
     z-index: 9999;
-    height: 200px;
+    height: 240px;
     position: relative;
   }
 
@@ -2152,7 +2152,7 @@ ul.plain-list > li {
   }
 
   .top-banner-content {
-    max-width: 980px;
+    max-width: 900px;
     width: auto;
     margin: 0 auto;
     padding: 6px;

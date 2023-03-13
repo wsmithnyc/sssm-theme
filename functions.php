@@ -113,7 +113,7 @@ add_action( 'genesis_theme_settings_metaboxes', 'seaport_museum_remove_metaboxes
 add_filter( 'genesis_customizer_theme_settings_config', 'seaport_museum_remove_customizer_settings' );
 
 //show banner before header
-add_action( 'genesis_before_header', 'add_widget_before_header', 5 );
+add_action( 'genesis_header', 'add_widget_before_header', 5 );
 
 // Displays top action buttons
 add_action( 'genesis_header', 'seaport_museum_top_actions', 11 ); //'genesis_header'
