@@ -1,11 +1,14 @@
 <?php
 
+require_once (__DIR__ . '\..\blocks\blocks_autoload.php');
+
 //custom functions for theme.
 //these are the functions that are called from functions.php
 //separation of concerns: execution vs function definition
 //wordpress calls functions.php to execute code
 //this file contains the functions only
 //so that "functions.php" only execute code and has no function definitions.
+use Blocks\Constants;
 use function StudioPress\Genesis\Functions\Schema\search_form_input;
 
 /**
@@ -38,7 +41,6 @@ function seaport_museum_header_title( $title, $inside, $wrap ) {
 	}
 	
 	return sprintf( '<%1$s class="site-title">%2$s</%1$s>', $wrap, $inside );
-	
 }
 
 /**
@@ -73,13 +75,11 @@ function seaport_museum_enqueue_scripts_styles() {
 		[],
 		CHILD_THEME_VERSION
 	);
-	
-	
+
 	wp_enqueue_style( 'dashicons' );
 	
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	
-	
+
 	wp_enqueue_script(
 		'seaport-museum',
 		get_stylesheet_directory_uri() . "/js/seaport-museum.js",
@@ -96,8 +96,7 @@ function seaport_museum_enqueue_scripts_styles() {
 	);
 	
 	$suffix = '';
-	
-	
+
 	wp_enqueue_script(
 		'seaport-museum-responsive-menu',
 		get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js",
@@ -105,14 +104,12 @@ function seaport_museum_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION,
 		true
 	);
-	
-	
+
 	wp_localize_script(
 		'seaport-museum-responsive-menu',
 		'genesis_responsive_menu',
 		seaport_museum_responsive_menu_settings()
 	);
-	
 }
 
 /**
@@ -136,7 +133,6 @@ function seaport_museum_responsive_menu_settings() {
 	);
 	
 	return $settings;
-	
 }
 
 /**
@@ -148,10 +144,8 @@ function seaport_museum_responsive_menu_settings() {
  *
  */
 function seaport_museum_remove_metaboxes( $_genesis_admin_settings ) {
-	
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
 	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
-	
 }
 
 /**
@@ -164,12 +158,10 @@ function seaport_museum_remove_metaboxes( $_genesis_admin_settings ) {
  *
  */
 function seaport_museum_remove_customizer_settings( $config ) {
-	
 	unset( $config['genesis']['sections']['genesis_header'] );
 	unset( $config['genesis']['sections']['genesis_breadcrumbs']['controls']['breadcrumb_front_page'] );
 	
 	return $config;
-	
 }
 
 /**
@@ -190,7 +182,6 @@ function seaport_museum_secondary_menu_args( $args ) {
 	$args['depth'] = 1;
 	
 	return $args;
-	
 }
 
 /**
@@ -203,9 +194,7 @@ function seaport_museum_secondary_menu_args( $args ) {
  *
  */
 function seaport_museum_author_box_gravatar( $size ) {
-	
 	return 90;
-	
 }
 
 /**
@@ -218,13 +207,10 @@ function seaport_museum_author_box_gravatar( $size ) {
  *
  */
 function seaport_museum_comments_gravatar( $args ) {
-	
 	$args['avatar_size'] = 60;
 	
 	return $args;
-	
 }
-
 
 /**
  * outputs the string returned from seaport_museum_get_custom_logo()
@@ -232,7 +218,6 @@ function seaport_museum_comments_gravatar( $args ) {
 function seaport_museum_custom_logo() {
 	echo seaport_museum_get_custom_logo();
 }
-
 
 /**
  * Returns a custom logo, linked to home.
@@ -309,6 +294,8 @@ function seaport_museum_get_custom_logo( $blog_id = 0 ) {
 	if ( $switched_blog ) {
 		restore_current_blog();
 	}
+
+    return '';
 }
 
 /**
@@ -445,9 +432,7 @@ function seaport_museum_footer_widget() {
  * @since 1.0.0
  */
 function seaport_museum_localization_setup() {
-	
 	load_child_theme_textdomain( 'seaport-museum', get_stylesheet_directory() . '/languages' );
-	
 }
 
 /**
@@ -457,7 +442,6 @@ function seaport_museum_header_javascript_cb() {
 	$heder_js = get_theme_mod( 'seaport_museum_header_javascript' );
 	
 	echo "<script type='text/javascript' id='seaport_museum_header_javascript'>\n$heder_js\n</script>";
-	
 }
 
 /**
@@ -468,15 +452,13 @@ function seaport_museum_footer_javascript_cb() {
 	$heder_js = get_theme_mod( 'seaport_museum_footer_javascript' );
 	
 	echo "<script type='text/javascript' id='seaport_museum_header_javascript'>\n$heder_js\n</script>";
-	
 }
-
 
 /**
  * Add custom colors to Gutenberg.
  */
 function seaport_museum_gutenberg_colors() {
-	// Retrieve the accent color fro the Customizer.
+	// Retrieve the accent color frm mthe Customizer.
 	$accent = get_theme_mod( 'accent_color', '#fff000' );
 	// Build styles.
 	$css = '';
@@ -543,7 +525,6 @@ function seaport_museum_copyright_shortcode( $atts ) {
 	$output .= date( 'Y' ) . $atts['after'];
 	
 	return apply_filters( 'seaport_museum_copyright_shortcode', $output, $atts );
-	
 }
 
 //Remove entry meta for the 'events' post type
@@ -551,7 +532,6 @@ function events_remove_entry_meta() {
 	//remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 	//remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-	
 	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
 	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
 	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
@@ -562,7 +542,6 @@ function remove_titles_from_pages() {
 		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	}
 }
-
 
 /**
  * Filter in URL for custom Superfish arguments.
@@ -602,9 +581,7 @@ function seaport_museum_admin_theme_style() {
 		[],
 		CHILD_THEME_VERSION
 	);
-	
 }
-
 
 /**
  * Swap in a different sidebar instead of the default sidebar.
@@ -625,8 +602,7 @@ function categories_archive_logic() {
 		
 		//remove the archive title
 		remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
-		
-		
+
 		//add_action( 'genesis_before_loop', 'child_get_categories_sidebar', 8);
 		
 		//open the div wrapper: wraps the posts in a container that will be responsive sized
@@ -634,7 +610,6 @@ function categories_archive_logic() {
 		
 		//close the div wrapper
 		add_action('genesis_after_loop', 'seaport_museum_archive_close', 20);
-		
 	}
 }
 
@@ -644,9 +619,7 @@ function categories_archive_logic() {
 function child_get_categories_sidebar() {
 	//this includes file 'sidebar-categories'
 	//get_sidebar( 'categories' );
-	
 }
-
 
 /**
  *  Opens a Div tag around archive post widgets
@@ -656,7 +629,7 @@ function child_get_categories_sidebar() {
 function seaport_museum_archive_open()
 {
 	echo seaport_museum_category_subnav();
-	echo "<div class='block-post-grid--content-subsection two-thirds'><div>";
+	echo "\n<div class='block-post-grid--content-subsection two-thirds'>\n<div>\n";
 }
 
 /**
@@ -666,7 +639,7 @@ function seaport_museum_archive_open()
  */
 function seaport_museum_archive_close()
 {
-	echo "</div></div></div>";
+	echo "\n</div>\n</div>\n</div>\n";
 }
 
 /**
@@ -732,22 +705,20 @@ function seaport_museum_category_subnav() {
 		//'cat_ID' => 22
 		if ($item->url == $current_url)
 		{
-			$html .= "<li id='menu-item-{$item->db_id}' class='current-page menu-item menu-item-type-taxonomy menu-item-object-category '>{$title}</li>";
+			$html .= "<li class='menu-item-{$item->db_id} current-page menu-item menu-item-type-taxonomy menu-item-object-category '>{$title}</li>";
 		}
 		else
 		{
 			$has_other_items = true;
 			
-			$html .= "<li id='menu-item-{$item->db_id}' class='menu-item menu-item-link menu-item-type-taxonomy menu-item-object-category'><span href='#' onclick='seaportMuseum.categoryNavigation(\"{$item->url}\")' itemprop='url'>{$title}</span></li>";
+			$html .= "<li class='menu-item-{$item->db_id} menu-item menu-item-link menu-item-type-taxonomy menu-item-object-category'><span href='#' onclick='seaportMuseum.categoryNavigation(\"{$item->url}\")' itemprop='url'>{$title}</span></li>";
 		}
-		
 	}
 	
 	$ul_class = ($has_other_items) ? 'show-border' : '';
 	
 	$html = ($show_sidebar)  ? "<aside id='sidebar' class='sidebar widget-area one-third first'><div id='sidebar-menu' class='sidebar__inner $ul_class'><ul>{$html}</ul></div><div>&nbsp;</div></aside>" : "";
-	
-	
+
 	$class = ($show_sidebar) ? 'two-thirds archive-header' : 'two-thirds';
 	
 	$html =  "<div style='clear: both; overflow: hidden;'><div class='$class'><h1>$menu_title</h1><p>$menu_desc</p></div></div><div class='archive-wrapper'>" . $html;
@@ -757,9 +728,7 @@ function seaport_museum_category_subnav() {
 
 function seaport_museum_category_header($menu_item) {
 	return  category_description( $menu_item->object_id );
-
 }
-
 
 function seaport_museum_category_query($query) {
 	global $wp_query;
@@ -773,7 +742,6 @@ function seaport_museum_category_query($query) {
 		
 		$query->query_vars['category_name'] = $categories[0];
 	}
-	
 }
 
 //filter to show only the inner content (no <html> <head> <body>, navigation, footers, etc)
@@ -807,7 +775,24 @@ function seaport_museum_hide_body() {
 	remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 	
 	remove_all_actions('wp_footer');
-	
-	
+
 	add_action( 'get_header', 'categories_archive_logic' );
 }
+
+function get_event_desc_shortcode(): string
+{
+    $hide = get_post_meta( get_the_ID(), Constants::CUSTOM_FIELD_HIDE_EVENT_TEXT, true );
+    $id = get_post_meta( get_the_ID(), Constants::CUSTOM_FIELD_TEMPLATE, true );
+    $desc = get_post_meta( get_the_ID(), Constants::CUSTOM_FIELD_EVENT_DESC, true );
+
+    $hide = strtolower(substr($hide, 0,1));
+    $id = trim($id);
+
+    //if there is no templateId or we set hide descriptions to "y" then return empty string
+    if(empty($id) || ($hide == 'y')) {
+        return '';
+    }
+
+    return "<div data-template-id-desc='{$id}-desc'>$desc</div>";
+}
+

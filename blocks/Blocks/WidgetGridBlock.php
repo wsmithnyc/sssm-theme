@@ -174,6 +174,22 @@ class WidgetGridBlock
 		
 		return true;
 	}
+
+    protected function getPostsByTagValue()
+    {
+        $this->post_list = [];
+
+        if (empty($this->page_repeater_list['rows'])) return false;
+
+        foreach ($this->page_repeater_list['rows'] as $item)
+        {
+            $post = get_post($item['sssm-page']['id']);
+
+            if (!empty($post)) $this->post_list[] = $post;
+        }
+
+        return true;
+    }
 	
 	
 	/**

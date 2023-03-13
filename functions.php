@@ -73,7 +73,6 @@ add_theme_support( 'custom-logo', genesis_get_config( 'custom-logo' ) );
 
 add_filter( 'genesis_seo_title', 'seaport_museum_header_title', 10, 3 );
 
-
 // Renames primary and secondary navigation menus.
 add_theme_support( 'genesis-menus', genesis_get_config( 'menus' ) );
 
@@ -83,6 +82,9 @@ add_image_size( 'widget-thumb', 600, 400, false );
 
 // Adds support for after entry widget.
 add_theme_support( 'genesis-after-entry-widget-area' );
+
+// Adds the ShortCode for event description, which is used in SSSM Posts
+add_shortcode( 'event-desc', 'get_event_desc_shortcode' );
 
 // Adds support for 3-column footer widgets.
 add_theme_support( 'genesis-footer-widgets', 4 );
@@ -98,7 +100,6 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'content-sidebar' );
-
 
 // Removes output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
@@ -143,14 +144,11 @@ remove_shortcode('footer_copyright');
 
 add_shortcode( 'footer_copyright', 'seaport_museum_copyright_shortcode' );
 
-
 add_action( 'init', 'events_remove_entry_meta', 12 );
 
 add_action( 'get_header', 'remove_titles_from_pages' );
 
-
 add_action('admin_enqueue_scripts', 'seaport_museum_admin_theme_style' );
-
 
 add_action( 'get_header', 'categories_archive_logic' );
 

@@ -55,8 +55,7 @@ class Widget
 			//use the posts title.
 			$title = get_the_title($post);
 		}
-		
-		
+
 		//Trim long titles down to approximately fit in the display area.
 		if (strlen($title) > 36) {
 			$last_space = strpos( $title, ' ', min( 35, strlen( $title ) - 1 ) );
@@ -112,7 +111,7 @@ class Widget
 		
 		$html = "<div {$category_data_tags} class=\"block-post-grid--post\" id=\"block-{$post_block_id}\" data-url=\"{$permalink}\">
             <div class='bock-post-grid--hover-indicator'></div>
-			<div onclick='window.location=\"{$permalink}\"' class=\"block-post-grid--post-thumbnail\" >{$thumbnail_img}</div>
+			<div onclick='window.location=\"{$permalink}\"' class=\"block-post-grid--post-thumbnail\" >\n{$thumbnail_img}\n</div>
 			<div class=\"block-post-grid--post-content has-theme-white-color\">
                 <h2><a href='{$permalink}'>{$title}</a></h2>
                 <div id=\"extra-{$post_block_id}\" class=\"block-post-grid--post-content-extra  has-theme-white-color\">
