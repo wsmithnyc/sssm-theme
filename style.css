@@ -2117,20 +2117,8 @@ ul.plain-list > li {
   --------------------------------------------- */
   /* note: see JS method initializeSidebar in seaport-museum.js */
   article.archive-widget {
-    width: 48.717948717948715%;
-    float: left;
     margin-bottom: 20px;
-    clear: none;
   }
-
-  article.archive-widget:nth-child(even) {
-    margin-left: 2.564102564102564%;
-  }
-
-  article.archive-widget:nth-child(odd) {
-    margin-left: 0;
-  }
-
 }
 
 @media only screen and (min-width: 960px) {

@@ -636,7 +636,7 @@ function child_get_categories_sidebar() {
 function seaport_museum_archive_open()
 {
 	echo seaport_museum_category_subnav();
-	echo "\n<div class='block-post-grid--content-subsection two-thirds'>\n<div>\n";
+	echo "\n<div class='block-post-grid--content-subsection two-thirds'>\n<div class='block-post-grid'>\n";
 }
 
 /**
